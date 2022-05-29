@@ -38,6 +38,7 @@
 
 
 ## About The Project
+![image](https://user-images.githubusercontent.com/86828496/170873708-138059ec-ab5b-4f20-809d-78aabd66335d.png)
 
 <!-- ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/Screenshot1.png?raw=true) -->
 
