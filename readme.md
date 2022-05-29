@@ -5,7 +5,7 @@
   </a>
 
   <h3 align="center">
-[WatchX.ai](https://watchx-ai.herokuapp.com/) and [AutoWatchX.ai](https://autowatchx-ai.herokuapp.com/)
+<a href="https://watchx-ai.herokuapp.com/" target = "_blank">WatchX.ai</a> and  <a href="https://autowatchx-ai.herokuapp.com/" target = "_blank">AutoWatchX.ai</a>
 </h3>
 
   <p align="center">
