@@ -1,0 +1,10 @@
+.terminated_container {
+  height: 100vh;
+  background-color: rgb(250, 205, 205);
+  flex-direction: column;
+  /* display: flex; */
+}
+
+.terminated_container > h1 {
+  margin-bottom: 50px;
+}

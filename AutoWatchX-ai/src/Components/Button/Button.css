@@ -1,0 +1,58 @@
+.btn {
+  padding: 10px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 3px;
+  transition: 500ms ease-out;
+  min-width: 140px;
+}
+
+.pri-btn {
+  background-color: #3366CC;
+  border: 2px solid #3366CC;
+}
+
+.pri-btn:hover {
+  background-color: #000;
+  border: 2px solid #3366CC;
+  color: #3366CC;
+}
+
+.sec-btn {
+  background-color: #fbfbfb;
+  border: 2px solid #fbfbfb;
+}
+
+.sec-btn:hover {
+  background-color: #000;
+  border: 2px solid #fbfbfb;
+  color: #fbfbfb;
+}
+
+.danger-btn {
+  background-color: #c22323;
+  color: #fbfbfb;
+  padding: 5px 10px;
+  min-width: 0;
+  font-size: 14px;
+}
+
+.danger-btn:hover {
+  background-color: #3366CC;
+  color: #000;
+}
+
+@media screen and (max-width: 800px) {
+  .btn {
+    padding: 8px 20px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .btn {
+    min-width: 60px;
+    padding: 4px 20px;
+  }
+}

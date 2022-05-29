@@ -1,0 +1,58 @@
+.App {
+  text-align: center;
+  position: relative;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  scroll-behavior: smooth;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-y: hidden;
+}
+
+/* p::-webkit-scrollbar {
+  display: none;
+} */
+
+button:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main-container {
+  /* background: url("./assets/images/book_and_pencil.jpg") no-repeat center; */
+  background-color: #F5F5F5;
+  background-size: cover;
+  /* box-shadow: inset 24em 0 30em 6em #000000; */
+  height: 100vh;
+}
+
+@media screen and (max-width: 800px) {
+  .main-container {
+    /* background: url("./assets/images/book_and_pencil.jpg") no-repeat -180px; */
+    background-size: cover;
+    background-color: #F5F5F5;
+  }
+}
