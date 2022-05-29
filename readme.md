@@ -28,11 +28,11 @@
 ## Table Of Contents
 
 * [About the Project](#about-the-project)
+* [Features](#Features)
 * [Built With](#built-with)
 * [Getting Started](#getting-started)
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
-* [Features](#Features)
 * [Author](#author)
 * [Screenshots](#Screenshots)
 
@@ -66,6 +66,49 @@
 ⚡ You can conduct examination without Proctor with help of  [AutoWatchX.ai](https://autowatchx-ai.herokuapp.com/) and get real time dashboard in [WatchX.ai](https://watchx-ai.herokuapp.com/)
 
 ⚡Deter Detect and Prevent .
+
+
+## Features
+
+<b>
+🚀Tab Capture
+  
+
+🚀Face capture
+  
+🚀Face invisible 
+  
+🚀Prohibited Keys press
+  
+🚀 Face not Visible
+  
+🚀Multiple Face detected 
+  
+🚀Prohibited  Object found
+  
+🚀Capture Mobile Phone
+  
+🚀 Exam Code feature (using Random Function generator) 
+  
+🚀Books , Copy Detector 
+  
+🚀Easy to Use 
+  
+🚀Handle Large number of Students
+  
+🚀 Supported Any type of Exam Link
+  
+🚀 Schedule Examination
+  
+🚀 Fixed Time Slot / Duration 
+  .
+🚀 Browser Supported .
+  
+🚀 Organised Result in the form of Tables.
+ 
+🚀 Real time Monitoring.
+  
+</b>
 
 
 
@@ -104,8 +147,8 @@ cd WatchX.ai
 
 ### Prerequisites
 
-Please Use node version 14.2.0
-Visual Studio Code 
+<b> Please Use node version 14.2.0 and </b>
+<b> Visual Studio Code </b>
 
 ### Installation
 
@@ -152,49 +195,6 @@ Visual Studio Code
   npm start 
 ```
 <b> App Will Run on localhost:3000 in your browser </b>
-
-
-## Features
-
-<b>
-🚀Tab Capture
-  
-
-🚀Face capture
-  
-🚀Face invisible 
-  
-🚀Prohibited Keys press
-  
-🚀 Face not Visible
-  
-🚀Multiple Face detected 
-  
-🚀Prohibited  Object found
-  
-🚀Capture Mobile Phone
-  
-🚀 Exam Code feature (using Random Function generator) 
-  
-🚀Books , Copy Detector 
-  
-🚀Easy to Use 
-  
-🚀Handle Large number of Students
-  
-🚀 Supported Any type of Exam Link
-  
-🚀 Schedule Examination
-  
-🚀 Fixed Time Slot / Duration 
-  .
-🚀 Browser Supported .
-  
-🚀 Organised Result in the form of Tables.
- 
-🚀 Real time Monitoring.
-  
-</b>
 
 
 
