@@ -35,6 +35,7 @@
   * [Installation](#installation)
 * [Author](#author)
 * [Screenshots](#Screenshots)
+* [Need Help](#Need-Help)
 
 
 ## About The Project
@@ -261,5 +262,24 @@ cd WatchX.ai
 
 
 
+
+
+
+## 🔗 Need-Help ?
+  
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vikas-pandit/)
+[![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vikaspandey1206@gmail.com)
+
+---------
+
+```javascript
+
+if (youEnjoyed) {
+    starThisRepository();
+}
+
+```
+
+-----------
 
 
