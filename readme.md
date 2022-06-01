@@ -28,6 +28,7 @@
 ## Table Of Contents
 
 * [About the Project](#about-the-project)
+* [Document Link](#document-link)
 * [Features](#Features)
 * [Built With](#built-with)
 * [Getting Started](#getting-started)
@@ -44,6 +45,14 @@
 <!-- ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/Screenshot1.png?raw=true) -->
 
 <!-- ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/Screenshot2.png?raw=true) -->
+
+## Document Link
+
+- [PPT](https://docs.google.com/presentation/d/14BvFOKHxLS4PIsrPOxVNA-AnLsZ--gB7/edit?usp=sharing&ouid=114600556447651504925&rtpof=true&sd=true)
+- [Architecture](https://drive.google.com/file/d/1Gnnow8as0umRHtpIio7aBncR67e9t3ih/view?usp=sharing)
+- [ER diagram](https://drive.google.com/file/d/1Sp5NruTPB8j4j_VKnAIwBJnhaTlCxccp/view?usp=sharing)
+- [Workflow](https://drive.google.com/file/d/1p99aflG2fxMIoyUmwgnfrBPyY0KVOyo6/view?usp=sharing)
+- [Use case diagram](https://drive.google.com/file/d/1_hIP76ERR0FxGAYRBYFWWmZr1bNxiw4d/view?usp=sharing)
 
 ###  Background of topic selection. Why did I choose this?
 
@@ -73,8 +82,9 @@
 ## Features
 
 <b>
-🚀Tab Capture
+🚀Tab Capture <br>
   
+<br>  
 
 🚀Face capture
   
@@ -102,8 +112,9 @@
   
 🚀 Schedule Examination
   
-🚀 Fixed Time Slot / Duration 
-  .
+🚀 Fixed Time Slot / Duration.
+  
+  
 🚀 Browser Supported .
   
 🚀 Organised Result in the form of Tables.
@@ -119,6 +130,8 @@
 
 
 ## Built With
+
+![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/mern.png?raw=true)
 
 👉 <b>Tensorflow Implementation of CocoSSD Object Detection Model and JavaScript </b>
  
