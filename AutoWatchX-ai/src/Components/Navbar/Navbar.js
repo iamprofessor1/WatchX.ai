@@ -56,7 +56,7 @@ const Navbar = (props) => {
           </li>
           <li>
             <li>
-              <a href="http://checker121.herokuapp.com/" target="_blank">🧑‍💻 WatchX.ai 🧑‍💻</a>
+              <a href="https://watchx-ai.herokuapp.com/" target="_blank">🧑‍💻 WatchX.ai 🧑‍💻</a>
             </li>
           </li>
 
