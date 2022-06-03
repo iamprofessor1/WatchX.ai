@@ -27,6 +27,7 @@
 
 <br>
 <br>
+
 ## Table Of Contents
 
 * [About the Project](#about-the-project)
@@ -207,7 +208,7 @@ cd WatchX.ai
   npm run dev
 ```
 <b> App Will Run on localhost:3000 in your browser </b>
-
+<br>
  <h3>📌  For  AutoWatchX-ai  ✳️</h3> 
 
 ➩ Move to AutoWatchX-ai  folder
@@ -231,7 +232,7 @@ cd WatchX.ai
 
 # Author
 
-  **<h2>🔥 VIKAS PANDEY 🔥</h2>** 
+  **<h1>🔥 VIKAS PANDEY 🔥</h1>** 
  *Computer Science Student of batch 2024*
  - [Linkedin](https://www.linkedin.com/in/vikas-pandit/) 
  - [Github](https://github.com/iamprofessor1)
@@ -255,56 +256,100 @@ cd WatchX.ai
 ![ERdiagram](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/ERdiagram.png?raw=true)
 <br>
 <br>
+
 # Use Case Diagram
 ![Use Case Diagram](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Use%20case%20diagram.png?raw=true)
 <br>
 <br>
+
 # WorkFlow
 ![WorkFlow](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/workflow.png?raw=true)
 <br>
 <br>
+
 # Screenshots
 <br>
 <br>
+
 ## [WatchX.ai](https://watchx-ai.herokuapp.com/)
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot1.png?raw=true)
 
+<br>
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot3.png?raw=true)
+
+<br>
+
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot4.png?raw=true)
 
+<br>
+
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot5.png?raw=true)
+
+<br>
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot6.png?raw=true)
 
+<br>
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot7.png?raw=true)
+
+<br>
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot8.png?raw=true)
 
+<br>
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot9.png?raw=true)
+
+<br>
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot10.png?raw=true)
 
+<br>
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot11.png?raw=true)
+
+<br>
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot12.png?raw=true)
 
+<br>
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot13.png?raw=true)
+
+<br>
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot14.png?raw=true)
 
+<br>
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot15.png?raw=true)
+
+<br>
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot16.png?raw=true)
 
+<br>
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot17.png?raw=true)
+
+<br>
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot18.png?raw=true)
 
+<br>
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot19.png?raw=true)
 
+<br>
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot20.png?raw=true)
+
+<br>
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot21.png?raw=true)
 
@@ -322,20 +367,32 @@ cd WatchX.ai
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/Screenshot2.png?raw=true)
 
+<br>
+
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/Screenshot11.png?raw=true)
+
+<br>
 
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/Screenshot12.png?raw=true)
 
+<br>
+
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/Screenshot13.png?raw=true)
+
+<br>
 
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/Screenshot14.png?raw=true)
 
+<br>
+
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/Screenshot15.png?raw=true)
+
+<br>
 
 
 
