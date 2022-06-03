@@ -25,6 +25,8 @@
 
 ![Contributors](https://img.shields.io/github/contributors/iamprofessor1/WatchX.ai?color=dark-green) ![Issues](https://img.shields.io/github/issues/iamprofessor1/WatchX.ai) ![License](https://img.shields.io/github/license/iamprofessor1/WatchX.ai) 
 
+<br>
+<br>
 ## Table Of Contents
 
 * [About the Project](#about-the-project)
@@ -35,9 +37,16 @@
   * [Prerequisites](#prerequisites)
   * [Installation](#installation)
 * [Author](#author)
+* [Architecture](#Architecture)
+* [ERdiagram](#ERdiagram)
+* [Use-Case-Diagram](#Use-Case-Diagram)
+* [WorkFlow](#WorkFlow)
 * [Screenshots](#Screenshots)
 * [Need Help](#Need-Help)
 
+
+<br>
+<br>
 
 ## About The Project
 ![image](https://user-images.githubusercontent.com/86828496/170873708-138059ec-ab5b-4f20-809d-78aabd66335d.png)
@@ -78,6 +87,8 @@
 
 ⚡Deter Detect and Prevent .
 
+<br>
+<br>
 
 ## Features
 
@@ -126,7 +137,8 @@
 
 
 
-
+<br>
+<br>
 
 
 ## Built With
@@ -143,7 +155,8 @@
 
 
 
-
+<br>
+<br>
 
 ## Getting Started
 
@@ -212,6 +225,9 @@ cd WatchX.ai
 <b> App Will Run on localhost:3000 in your browser </b>
 
 
+<br>
+<br>
+
 
 # Author
 
@@ -223,8 +239,33 @@ cd WatchX.ai
  - [Codeforces](https://codeforces.com/profile/vikaspandey)
 
 
-# Screenshots
+<br>
+<br>
 
+# Architecture
+![Architecture](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Architecture.png?raw=true)
+<br>
+<br>
+
+
+
+
+
+# ERdiagram
+![ERdiagram](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/ERdiagram.png?raw=true)
+<br>
+<br>
+# Use Case Diagram
+![Use Case Diagram](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Use%20case%20diagram.png?raw=true)
+<br>
+<br>
+# WorkFlow
+![WorkFlow](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/workflow.png?raw=true)
+<br>
+<br>
+# Screenshots
+<br>
+<br>
 ## [WatchX.ai](https://watchx-ai.herokuapp.com/)
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot1.png?raw=true)
@@ -267,11 +308,13 @@ cd WatchX.ai
 
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot21.png?raw=true)
 
-
+<br>
+<br>
 
 <b>And Many More TrY My webapp </b>
 
-
+<br>
+<br>
 
 
 ## [AutoWatchX.ai](https://autowatchx-ai.herokuapp.com/)
