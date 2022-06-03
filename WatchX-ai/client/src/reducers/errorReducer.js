@@ -1,4 +1,8 @@
-import { GET_ERRORS } from "../actions/types";
+
+/**********************************************************************/
+/***************** errorReducer **********/
+/********************************************************************/
+import { GET_ERRORS } from "../RegisterLog/types";
 const initialState = {};
 
 export default function(state = initialState, action) {
@@ -9,3 +13,9 @@ export default function(state = initialState, action) {
       return state;
   }
 }
+
+
+
+/**********************************************************************/
+/***************** errorReducer **********/
+/********************************************************************/

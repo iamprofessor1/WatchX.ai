@@ -1,8 +1,18 @@
+/**********************************************************************/
+/********************** Users API  ******************************/
+/********************************************************************/
+
+/*
+ 1 .* This api is used to register new users.
+ 2 .* If form data is invalid or email already exists in database it returns an error
+ 3 . * else it creates the account
+ */
+
 const express = require("express");
 const router = express.Router();
+const keys = require("../../config/keys");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
-const keys = require("../../config/keys");
 
 // Load input validation
 
@@ -14,11 +24,7 @@ const validateLoginInput = require("../../validation/login");
 const User = require("../../models/Users");
 
 
-/**
- * This api is used to register new users.
- * If form data is invalid or email already exists in database it returns an error
- * else it creates the account
- */
+
 router.post("/register", (req, res) => {
     // validate registration data for errors
     const {errors, isValid} = validateRegisterInput(req.body);
@@ -73,7 +79,7 @@ router.post("/login", (req, res) => {
   const password = req.body.password;
   // Find user by email
     User.findOne({ email }).then(user => {
-      // Check if user exists
+      // Check if user exists in database 
       if (!user) {
         return res.status(404).json({ emailnotfound: "Email not found" });
       }
@@ -88,7 +94,7 @@ router.post("/login", (req, res) => {
             userType:user.userType,
             email:user.email,
           };
-        // Sign token
+        // Sign token experies in 1 year
           jwt.sign(
             payload,
             keys.secretOrKey,
@@ -112,3 +118,8 @@ router.post("/login", (req, res) => {
   });
   // export the router
   module.exports = router;
+
+
+/**********************************************************************/
+/********************** Users API  ******************************/
+/********************************************************************/

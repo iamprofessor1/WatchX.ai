@@ -1,57 +1,59 @@
-
-.timer{
+.timer {
   position: fixed;
-  top:50%;
+  top: 50%;
   margin-left: 15px;
+  /* border: solid 100px; */
 }
+
 .row {
   display: flex;
+}
+
+.text {
+  position: absolute;
+  top: 45%;
+  left: 10%;
+}
+
+#form {
+  top: 0;
+  right: 0;
+  position: fixed;
+  height: 100%;
+  width: 50%;
 }
 
 /* Create two equal columns that sits next to each other */
 .column {
   flex: 50%;
   padding: 10px;
-  
+
 }
 
-.detect{
+
+.leftClass {
+  top: 30%;
+  left: 5%;
+  position: fixed;
+}
+
+.givesize {
+  font-size: large;
+}
+
+.detect {
   height: 100px;
   width: 100px;
 }
 
-.button{
-  position:fixed;
+.button {
+  position: fixed;
   top: 40%;
   left: 5%;
 }
 
-.text{
-  position:absolute;
-  top:45%;
-  left: 10%;
-}
-
-#form{
-  top: 0;
-  right: 0;
-  position:fixed; 
-  height: 100%;
-  width: 50%;
-}
-
-.lame{
-  top:40%;
-  left:5%;
+.lame {
+  top: 40%;
+  left: 5%;
   position: fixed;
-}
-
-.leftClass{
-top:30%;
-left:5%;
-position: fixed;
-}
-
-.givesize{
-font-size: large;
 }

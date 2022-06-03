@@ -1,9 +1,13 @@
+/**********************************************************************/
+/******************Dashboard for Student *****************************/
+/**********************************************************************/
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import TextField from '@mui/material/TextField';
 import { connect } from "react-redux";
-import { logoutUser } from "../../actions/authActions";
+import { logoutUser } from "../../RegisterLog/authActions";
 import { useHistory } from "react-router-dom";
+import TextField from '@mui/material/TextField';
+
 
 function StudentDashboard(props) {
 
@@ -14,7 +18,7 @@ function StudentDashboard(props) {
   const moment = require("moment");
   const history = useHistory();
 
-  /**
+  /*
    * This function is called when student enters exam code to start the exam
    * It checks the exam code, if invalid it displays error
    * If valid, it uses the start time and duration to find if exam is running or not
@@ -147,3 +151,8 @@ export default connect(
   mapStateToProps,
   { logoutUser }
 )(StudentDashboard);
+
+/**********************************************************************/
+/******************Dashboard for Student *****************************/
+/**********************************************************************/
+

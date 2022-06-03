@@ -1,9 +1,14 @@
+
+/**********************************************************************/
+/****************** Landing JS *****************************/
+/**********************************************************************/
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-/**
- * Creates the landing page that has 2 buttons Register and Login
- * Button presses redirect to the correct component
+/*
+ 1. Creates the landing page that has a content and  2 buttons Register and Login button 
+ 2. Button presses redirect 
  */
 class Landing extends Component {
 
@@ -27,6 +32,7 @@ class Landing extends Component {
 
             </p>
             <br />
+          {/* Register Buton */}
             <div className="col s6">
               <Link
                 to="/register"
@@ -40,6 +46,7 @@ class Landing extends Component {
              🔏 Register🔏
               </Link>
             </div>
+            {/* Log in Button */}
             <div className="col s6">
               <Link
                 to="/login"
@@ -55,13 +62,14 @@ class Landing extends Component {
             </div>
             <br></br>
             <br></br>
-            
+            {/* Features */}
             <br></br>
             <hr></hr>
             <h5>
             🎯 Tab Changes  🎯 Prohibited keys Press 🎯 Face not Visible 🎯 Multiple Face detected <br></br>🎯 Mobile phone detected 🎯 Prohibited Object found  🎯 Many More features
             <br></br>
             <hr></hr>
+            {/* To list new website */}
             <h5>🤖🤖 <u>Powered By AI</u> try our <a href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " > Automatic Proctoring</a> <a class="waves-effect waves-light btn-large" href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " style={{
                   width: "180px",
                   borderRadius: "15px",
@@ -80,3 +88,8 @@ class Landing extends Component {
   }
 }
 export default Landing;
+
+
+/**********************************************************************/
+/****************** Landing JS *****************************/
+/**********************************************************************/

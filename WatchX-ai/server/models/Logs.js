@@ -1,3 +1,6 @@
+/**********************************************************************/
+/********************** Saving the Logs Format ******************************/
+/********************************************************************/
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // create new schema for a student exam log
@@ -48,5 +51,10 @@ const LogsSchema = new Schema({
     }
     
   });
-// export the model
+// export the model to LogsScheme
 module.exports = User = mongoose.model("logs", LogsSchema);
+
+
+/**********************************************************************/
+/********************** Saving the Logs Format ******************************/
+/********************************************************************/

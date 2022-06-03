@@ -1,4 +1,15 @@
+/**********************************************/
+/******************Logs Table*****************/
+/********************************************/
 import React from 'react';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Paper from '@mui/material/Paper';
+import FilterListIcon from '@mui/icons-material/FilterList';
+import SearchBar from "material-ui-search-bar";
+import { visuallyHidden } from '@mui/utils';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 import PropTypes from 'prop-types';
 import { alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
@@ -11,15 +22,8 @@ import TableHead from '@mui/material/TableHead';
 import TablePagination from '@mui/material/TablePagination';
 import TableRow from '@mui/material/TableRow';
 import TableSortLabel from '@mui/material/TableSortLabel';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import { visuallyHidden } from '@mui/utils';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
 import DeleteIcon from '@mui/icons-material/Delete';
-import FilterListIcon from '@mui/icons-material/FilterList';
-import SearchBar from "material-ui-search-bar";
+
 
 const axios = require('axios')
 
@@ -30,6 +34,10 @@ const axios = require('axios')
  * @param {String} orderBy asc or desc
  * @returns -1 if a>b, 1 if b>a 0 if equal
  */
+
+/**********************************************************************/
+/******************Comparators function ****************/
+/**********************************************************************/
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
     return -1;
@@ -41,11 +49,12 @@ function descendingComparator(a, b, orderBy) {
 }
 
 /**
- * Creates ascending and decending comparator
  * @param {String} order asc or desc
  * @param {*} orderBy 
  * @returns descendingComparator value (-1,0,1)
  */
+
+//  Creates ascending and decending comparator
 function getComparator(order, orderBy) {
   return order === 'desc'
     ? (a, b) => descendingComparator(a, b, orderBy)
@@ -76,12 +85,15 @@ const headCells = [
   { id: 'mobile_found', numeric: false, disablePadding: false, label: 'Mobile Found' },
   { id: 'prohibited_object_found', numeric: false, disablePadding: false, label: 'Prohibited Object Found' },
 ];
-
+// Array of the header cells of the table
+// each element is an object containing that header cell's properties
 /**
- * Creates the Table Head
+ 
  * @param {Props} props 
  * @returns rendering component
  */
+
+//  * Creates the Table Head
 function EnhancedTableHead(props) {
   const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
   const createSortHandler = (property) => (event) => {
@@ -91,17 +103,17 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        
+
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
             align={headCell.numeric ? 'right' : 'left'}
             padding={headCell.disablePadding ? 'none' : 'normal'}
-            sortDirection={orderBy===headCell.id ?order:false}
+            sortDirection={orderBy === headCell.id ? order : false}
           >
             <TableSortLabel
-              active={orderBy===headCell.id}
-              direction={orderBy===headCell.id?order:'asc'}
+              active={orderBy === headCell.id}
+              direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
             >
               {headCell.label}
@@ -185,10 +197,12 @@ EnhancedTableToolbar.propTypes = {
 };
 
 /**
- * This function is the main function of this file
- * It creates the whole table
  * @returns renders the table
  */
+
+
+//  * This function is the main function of this file
+//  * It creates the whole table
 export default function LogsTable(props) {
   const [exam_code, setExamCode] = React.useState("");
   const [visibility, setVisibility] = React.useState(false);
@@ -199,25 +213,25 @@ export default function LogsTable(props) {
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const [rows,setRows]=React.useState([]);
-  const [TableData,setTableData]=React.useState([]);
+  const [rows, setRows] = React.useState([]);
+  const [TableData, setTableData] = React.useState([]);
   const [searched, setSearched] = React.useState("");
 
 
-  /**
+  /*
    * Gets student logs from the server using the exam code and professor's email
    * and updates the table
-   * 
+ 
    */
-  const getData=async ()=>{
+  const getData = async () => {
     try {
       // check if exam code is valid and it is one of professor's exams
-      axios.get('/api/exams/examsByProf?exam_code='+exam_code+'&prof_email='+props.prof_email)
-      .then(function (response) {
+      axios.get('/api/exams/examsByProf?exam_code=' + exam_code + '&prof_email=' + props.prof_email)
+        .then(function (response) {
           console.log(response);
           // exam code valid, and permission is there so let it pass through
-      })
-      .catch(function (err) {
+        })
+        .catch(function (err) {
           console.log(err);
           // either exam code invalid or its not this professor's exam
           setErrorText("Either exam code is invalid  ❌ or you don't have permission ❌");
@@ -226,18 +240,18 @@ export default function LogsTable(props) {
           setTableData([]);
           setRows([]);
           return;
-      });
-      const response = await axios.post('/api/logs/allData',{exam_code:exam_code});
-    
+        });
+      const response = await axios.post('/api/logs/allData', { exam_code: exam_code });
+
       setErrorText("");
       setVisibility(true);
-      
-      var curr_logs=[];
+
+      var curr_logs = [];
       // loop over the response and store it in the state
-      for(var i=0;i<response.data.length;i++){
-      
-        var obj=new Object();
-        obj.s_no=i+1;
+      for (var i = 0; i < response.data.length; i++) {
+
+        var obj = new Object();
+        obj.s_no = i + 1;
         obj.student_name = response.data[i].student_name;
         obj.student_email = response.data[i].student_email;
         obj.tab_change_count = response.data[i].tab_change_count;
@@ -246,13 +260,13 @@ export default function LogsTable(props) {
         obj.multiple_faces_found = response.data[i].multiple_faces_found;
         obj.mobile_found = response.data[i].mobile_found;
         obj.prohibited_object_found = response.data[i].prohibited_object_found;
-        curr_logs=[...curr_logs,obj]
-        
+        curr_logs = [...curr_logs, obj]
+
       }
       setTableData(curr_logs);
       setRows(curr_logs);
     }
-    catch(err){
+    catch (err) {
       console.error(err.message)
     }
   }
@@ -281,29 +295,29 @@ export default function LogsTable(props) {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
-  
+
   /**
    * Filters rows based on the search string present in name or email of the student
    * @param {String} searchVal 
    */
-  const requestSearch=(searchVal)=>{
-  
-    const filteredRows=TableData.filter((row)=>{
+  const requestSearch = (searchVal) => {
+
+    const filteredRows = TableData.filter((row) => {
       // for each row of data check if name or email contains the search string
-      if(row.student_name.toLowerCase().includes(searchVal.toLowerCase()) || row.student_email.toLowerCase().includes(searchVal.toLowerCase())) {
-        
+      if (row.student_name.toLowerCase().includes(searchVal.toLowerCase()) || row.student_email.toLowerCase().includes(searchVal.toLowerCase())) {
+
         return true;
       }
       else return false;
     })
     setRows(filteredRows);
-    
+
 
   }
   /**
    * Cancels the search and sets the whole table to original position
    */
-  const cancelSearch=()=>{
+  const cancelSearch = () => {
     setSearched("");
     requestSearch(searched);
   }
@@ -312,55 +326,55 @@ export default function LogsTable(props) {
   const formatValue = (value) => value.toFixed(0);
 
   return (
-    
+
 
     <Box sx={{ width: '100%' }}>
-    <TextField
-      autoFocus
-      padding="10px"
-      margin="dense"
-      variant="standard"
-      id="exam_code"
-      label="Exam Code"
-      type="text"
-      required={true}
-      value={exam_code}
-      onChange={(e)=>setExamCode(e.target.value)}
-    />
+      <TextField
+        autoFocus
+        padding="10px"
+        margin="dense"
+        variant="standard"
+        id="exam_code"
+        label="Exam Code"
+        type="text"
+        required={true}
+        value={exam_code}
+        onChange={(e) => setExamCode(e.target.value)}
+      />
 
-    <button
-      style={{
-        width: "200px",
-        borderRadius: "3px",
-        letterSpacing: "1.5px",
-        marginLeft:"10px",
-        marginTop: "1rem"
-      }}
-      onClick={getData}
-      className="waves-effect waves-light btn green darken-1"
-    >
-      📂 Check Logs 📂
-    </button>
+      <button
+        style={{
+          width: "200px",
+          borderRadius: "3px",
+          letterSpacing: "1.5px",
+          marginLeft: "10px",
+          marginTop: "1rem"
+        }}
+        onClick={getData}
+        className="waves-effect waves-light btn green darken-1"
+      >
+        📂 Check Logs 📂
+      </button>
 
-    <br/>
+      <br />
 
-    <p style={{color:"red", textAlign:"center"}}> {error_text} </p>
+      <p style={{ color: "red", textAlign: "center" }}> {error_text} </p>
 
-    {visibility === true && (<Paper sx={{ width: '100%', mb: 2 }}>
-      
-      <SearchBar
-      value={searched}
-      onChange={(searchVal) => requestSearch(searchVal)}
-      onCancelSearch={() => cancelSearch()}
-      style={{border:'3px solid rgba(0, 0, 0, 0.05)'}}
-    />
+      {visibility === true && (<Paper sx={{ width: '100%', mb: 2 }}>
+
+        <SearchBar
+          value={searched}
+          onChange={(searchVal) => requestSearch(searchVal)}
+          onCancelSearch={() => cancelSearch()}
+          style={{ border: '3px solid rgba(0, 0, 0, 0.05)' }}
+        />
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer >
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
             size={dense ? 'small' : 'medium'}
-            
+
           >
             <EnhancedTableHead
               numSelected={selected.length}
@@ -382,7 +396,7 @@ export default function LogsTable(props) {
                       hover
                       key={row.s_no}
                     >
-                      
+
                       <TableCell component="th" id={labelId} scope="row" padding="normal">
                         {row.s_no}
                       </TableCell>
@@ -390,12 +404,12 @@ export default function LogsTable(props) {
                       <TableCell align="left">{row.student_email}</TableCell>
                       <TableCell align="right">{row.tab_change_count}</TableCell>
                       <TableCell align="right">{row.key_press_count}</TableCell>
-                      <TableCell align="left">{row.face_not_visible === true? "Yes" : "No"}</TableCell>
+                      <TableCell align="left">{row.face_not_visible === true ? "Yes" : "No"}</TableCell>
                       <TableCell align="left">{row.multiple_faces_found === true ? "Yes" : "No"}</TableCell>
-                      <TableCell align="left">{row.mobile_found === true ?"Yes" : "No"}</TableCell>
-                      <TableCell align="left">{row.prohibited_object_found === true ?"Yes" : "No"}</TableCell>
-                      
-                      
+                      <TableCell align="left">{row.mobile_found === true ? "Yes" : "No"}</TableCell>
+                      <TableCell align="left">{row.prohibited_object_found === true ? "Yes" : "No"}</TableCell>
+
+
                     </TableRow>
                   );
                 })}
@@ -416,11 +430,14 @@ export default function LogsTable(props) {
           onPageChange={handleChangePage}
           onRowsPerPageChange={handleChangeRowsPerPage}
         />
-        
+
       </Paper>)}
-      <br/>
-      <br/>
-      </Box>
-      
+      <br />
+      <br />
+    </Box>
+
   );
 }
+/**********************************************/
+/******************Logs Table*****************/
+/********************************************/
