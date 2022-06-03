@@ -1,8 +1,9 @@
+/**********************************************************************/
+/******************Dashboard for Professor *****************************/
+/**********************************************************************/
+
+
 import React, { Component, useState } from "react";
-import PropTypes from "prop-types";
-import TextField from '@mui/material/TextField';
-import Button from '@mui/material/Button';
-import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
@@ -11,7 +12,11 @@ import AdapterDateFns from '@mui/lab/AdapterDateFns';
 import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import DateTimePicker from '@mui/lab/DateTimePicker';
 import swal from 'sweetalert';
-import { logoutUser } from "../../actions/authActions";
+import { logoutUser } from "../../RegisterLog/authActions";
+import PropTypes from "prop-types";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import Dialog from '@mui/material/Dialog';
 import LogsTable from "./LogsTable.js"
 import { connect } from "react-redux";
 
@@ -19,11 +24,11 @@ function ProfDashboard(props) {
   const [examDialogOpen, setExamDialogOpen] = useState(false);
   const [name, setName] = useState("");
   const [exam_link, setExamLink] = useState("");
-  const [date_time_start, setDateTimeStart] = useState(new Date());
   const [duration, setDuration] = useState(0);
   const [exam_code, setExamCode] = useState("");
   const [errorText, setErrorText] = useState("");
   const [exam_code_search, setExamCodeSearch] = useState("");
+  const [date_time_start, setDateTimeStart] = useState(new Date());
   const axios = require("axios");
 
   /**
@@ -67,6 +72,10 @@ function ProfDashboard(props) {
    * that exam has been created
    * 
    */
+
+  /**********************************************************************/
+  /******************Create Exam ****************************************/
+  /**********************************************************************/
   function createExam() {
     if (name === "") {
       setErrorText("⚠️ Name of Exam cannot be empty ⚠️ ");
@@ -107,14 +116,14 @@ function ProfDashboard(props) {
       })
       .catch(function (error) {
         console.log(error);
-        swal("Some error occoured in creating the exam");
+        swal("⚠️ Some error occoured in creating the exam ⚠️ Please Try AGAIN!");
       });
 
     closeExamDialog();
 
   }
 
-  /**
+  /*
    * Generates a random code of length 5 to be used as exam code
    */
   function generateCode() {
@@ -132,139 +141,149 @@ function ProfDashboard(props) {
 
 
   return (
-      <div style={{ height: "100%"}} className="container valign-wrapper">
-        <div className="row">
-          <div className="col s12 center-align">
-            <h4>
-              <b>Welcome to <h3 style={{ color: "red" }}>👮 WatchX.ai 👮</h3> Prof. 🕵🏻</b> {props.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-               <li> Click Create Exam  and then Enter all details .</li>
-               <li>Send the Link 🔗 to the students.</li>
-               <li> Monitor the exam and students in real-time . </li>
-               
-              </p>
-            </h4>
-            <button
-              style={{
-                width: "200px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              onClick={openExamDialog}
-              className="btn btn-large waves-effect waves-light btn pink darken-1"
-            >
-               Create Exam 📝
-            </button>
-            <button
-              style={{
-                width: "200px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginLeft:"10px",
-                marginTop: "1rem"
-              }}
-              onClick={props.logoutUser}
-              className="waves-effect waves-light btn blue"
-            >
-              🔓  Logout 🔓
-            </button>
-            <br/>
-            <br/>
-            🤖🤖 Powered by AI 🤖🤖
-            <LogsTable exam_code={exam_code_search} prof_email={props.prof_email}/>
-            
+    <div style={{ height: "100%" }} className="container valign-wrapper">
+      <div className="row">
+        <div className="col s12 center-align">
+          <h4>
+            <b>Welcome to <h3 style={{ color: "red" }}>👮 WatchX.ai 👮</h3> Prof. 🕵🏻</b> {props.name.split(" ")[0]}
+            <p className="flow-text grey-text text-darken-1">
+              <li> Click Create Exam  and then Enter all details .</li>
+              <li>Send the Link 🔗 to the students.</li>
+              <li> Monitor the exam and students in real-time . </li>
 
-            
-            <Dialog open={examDialogOpen} onClose={closeExamDialog} aria-labelledby="form-dialog-title" repositionOnUpdate={false}
+            </p>
+          </h4>
+          <button
+            style={{
+              width: "200px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+              marginTop: "1rem"
+            }}
+            onClick={openExamDialog}
+            className="btn btn-large waves-effect waves-light btn pink darken-1"
+          >
+            Create Exam 📝
+          </button>
+          <button
+            style={{
+              width: "200px",
+              borderRadius: "3px",
+              letterSpacing: "1.5px",
+              marginLeft: "10px",
+              marginTop: "1rem"
+            }}
+            onClick={props.logoutUser}
+            className="waves-effect waves-light btn blue"
+          >
+            🔓  Logout 🔓
+          </button>
+          <br />
+          <br />
+          🤖🤖 Powered by AI 🤖🤖
+          <LogsTable exam_code={exam_code_search} prof_email={props.prof_email} />
+
+
+
+          <Dialog open={examDialogOpen} onClose={closeExamDialog} aria-labelledby="form-dialog-title" repositionOnUpdate={false}
             style={{ padding: '10px 10px 10px 10px' }}>
             <DialogTitle id="form-dialog-title"> 👁 📝 Create Exam 👁📖 </DialogTitle>
             <DialogContent margin="20px" style={{ padding: "30px" }}>
               <DialogContentText>
-                  Enter details for the exam 📝 . Press Generate 👩🏻‍💻 to generate the exam code and share it with the students 🧑‍🎓 .
+                Enter details for the exam 📝 . Press Generate 👩🏻‍💻 to generate the exam code and share it with the students 🧑‍🎓 .
               </DialogContentText>
               <TextField
-                  autoFocus
-                  padding="10px"
-                  margin="dense"
-                  variant="standard"
-                  id="name"
-                  label="📜 Name of the Exam 📜 "
-                  type="text"
-                  fullWidth
-                  required={true}
-                  value={name}
-                  onChange={(e)=>setName(e.target.value)}
+                autoFocus
+                padding="10px"
+                margin="dense"
+                variant="standard"
+                id="name"
+                label="📜 Name of the Exam 📜 "
+                type="text"
+                fullWidth
+                required={true}
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <TextField
-                  id="examLink"
-                  name="examLink"
-                  label="✒️ Exam Link ✒️ "
-                  margin="dense"
-                  variant="standard"
-                  value={exam_link}
-                  onChange={(e)=> setExamLink(e.target.value)}
-                  required={true}
-                  fullWidth
+                id="examLink"
+                name="examLink"
+                label="✒️ Exam Link ✒️ "
+                margin="dense"
+                variant="standard"
+                value={exam_link}
+                onChange={(e) => setExamLink(e.target.value)}
+                required={true}
+                fullWidth
               />
 
               <LocalizationProvider dateAdapter={AdapterDateFns}>
-                  <DateTimePicker
-                      renderInput={(props) => <TextField {...props} />}
-                      label="🕛 DateTimePicker 🕛"
-                      value={date_time_start}
-                      margin="dense"
-                      variant="standard"
-                      onChange={(newValue) => {
-                      setDateTimeStart(newValue);
-                      }}
-                  />
+                <DateTimePicker 
+                  renderInput={(props) => <TextField {...props} />}
+                  label="🕛 Date and Time  🕛"
+                  value={date_time_start}
+                  margin="dense"
+                  variant="standard"
+                  orientation="portrait"
+                  // variant="inline"
+                  onChange={(newValue) => {
+                    setDateTimeStart(newValue);
+                  }}
+                />
               </LocalizationProvider>
               <TextField
-                  id="duration"
-                  name="duration"
-                  label=" ⌚ Exam duration (minutes) ⌚"
-                  margin="dense"
-                  variant="standard"
-                  value={duration}
-                  onChange={(e)=> setDuration(e.target.value)}
-                  required={true}
-                  minDate={new Date()}
-                  minTime={new Date(0, 0, 0, 8)}
+                id="duration"
+                name="duration"
+                label=" ⌚ Exam duration (minutes) ⌚"
+                margin="dense"
+                variant="standard"
+                value={duration}
+                onChange={(e) => setDuration(e.target.value)}
+                required={true}
+                minDate={new Date()}
+                minTime={new Date(0, 0, 0, 8)}
               />
               <TextField
-                  id="exam_code"
-                  name="exam_code"
-                  label="👩‍💻 Exam Code 👩‍💻 "
-                  margin="dense"
-                  variant="standard"
-                  value={exam_code}
-                  disabled={true}
-                  onChange={(e)=> setExamCode(e.target.value)}
-                  required={true}
-                  fullWidth
+                id="exam_code"
+                name="exam_code"
+                label="👩‍💻 Exam Code 👩‍💻 "
+                margin="dense"
+                variant="standard"
+                value={exam_code}
+                disabled={true}
+                onChange={(e) => setExamCode(e.target.value)}
+                required={true}
+                fullWidth
               />
               <p style={{ color: "red" }}> {errorText}</p>
-              <Button onClick={generateCode}>🛅 Generate Exam Code 🛅</Button>
-              </DialogContent>
-              <DialogActions>
-              <Button onClick={closeExamDialog} color="secondary">
-                  Close
-              </Button>
-              <Button onClick={createExam} color="primary">
-                  Save
-              </Button>
-              </DialogActions>
-            </Dialog>
-            
-          </div>
-        </div>
-        
+              <Button onClick={generateCode} style={{
+                color: "red", width: "170px",
+              borderRadius: "15px",
+              letterSpacing: "1.5px",
+              backgroundColor: "yellow",
+              fontFamily: "fantasy"}}>🛅 Generate Exam Code 🛅 </Button>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={closeExamDialog} color="secondary">
+              Close
+            </Button>
+            <Button onClick={createExam} color="primary">
+              Save
+            </Button>
+          </DialogActions>
+        </Dialog>
+
       </div>
-      
-             
-    );
+    </div>
+
+    </div >
+
+
+  );
 };
+/*
+Proff dashboard
+*/
 ProfDashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired
@@ -276,3 +295,8 @@ export default connect(
   mapStateToProps,
   { logoutUser }
 )(ProfDashboard);
+
+
+/**********************************************************************/
+/******************Dashboard for Professor *****************************/
+/**********************************************************************/

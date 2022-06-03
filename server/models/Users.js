@@ -1,3 +1,7 @@
+
+/**********************************************************************/
+/********************** Saving the Users Format ******************************/
+/********************************************************************/
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 // create new schema for website user (professor or student)
@@ -21,5 +25,8 @@ const UserSchema = new Schema({
     }
     
   });
-// export the model
+// export the model into UserSchema 
 module.exports = User = mongoose.model("users", UserSchema);
+/**********************************************************************/
+/********************** Saving the Users Format ******************************/
+/********************************************************************/

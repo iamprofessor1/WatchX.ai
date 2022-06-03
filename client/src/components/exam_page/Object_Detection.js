@@ -1,11 +1,13 @@
-import React from "react";
-import swal from 'sweetalert';
-//import count from './Login';
+/**********************************************************************/
+/****************** oBJECT dETECTIONS *****************************/
+/**********************************************************************/
 import * as cocoSsd from "@tensorflow-models/coco-ssd";
 import "@tensorflow/tfjs";
 import "./Detections.css";
+import React from "react";
+import swal from 'sweetalert';
 
-/**
+/*
  * This is the object detection class which uses webcam input 
  * feed and runs coco-ssd model for object detection
  */
@@ -17,10 +19,10 @@ export default class Detection extends React.Component {
   constructor(props) {
     super(props);
     // count in state stores no of frames passed since face is not visible
-    this.state = {count: 0};
+    this.state = { count: 0 };
   }
 
-  /**
+  /*
    * ComponentDidMount Runs when the component is first loaded
    * Setting up webcam input, loading model and calling DetectFrame which is
    * a recursive function so that it keeps detecting throughout the test
@@ -68,7 +70,7 @@ export default class Detection extends React.Component {
     model.detect(video).then(predictions => {
 
       if (this.canvasRef.current) {
-        
+
         this.renderPredictions(predictions);
         requestAnimationFrame(() => {
           this.detectFrame(video, model);
@@ -78,9 +80,9 @@ export default class Detection extends React.Component {
       }
     });
   };
-  
+
   renderPredictions = predictions => {
-    
+
     // setting up the canvas for drawing rectangles and printing 
     // prediction text
     const ctx = this.canvasRef.current.getContext("2d");
@@ -97,22 +99,22 @@ export default class Detection extends React.Component {
       const width = prediction.bbox[2];
       const height = prediction.bbox[3];
       // Draw the bounding box.
-      ctx.strokeStyle = "#00FFFF";
+      ctx.strokeStyle = "red";
       ctx.lineWidth = 2;
       ctx.strokeRect(x, y, width, height);
       // Draw the label background.
-      ctx.fillStyle = "#00FFFF";
+      ctx.fillStyle = "red";
       const textWidth = ctx.measureText(prediction.class).width;
       const textHeight = parseInt("16px sans-serif", 10); // base 10
       ctx.fillRect(x, y, textWidth + 8, textHeight + 8);
-      
+
     });
 
     // Looping over all predictions and drawing text (prediction class)
     predictions.forEach(prediction => {
       const x = prediction.bbox[0];
       const y = prediction.bbox[1];
-      
+
       ctx.fillStyle = "#000000";
 
       // Draw the text last to ensure it's on top.
@@ -120,45 +122,46 @@ export default class Detection extends React.Component {
         ctx.fillText(prediction.class, x, y);
       }
     });
-    
+
     var faces = 0;
-      // if face is not visible till 50 consecutive frames, student is
-      // not in front of the computer, throw an error
-      if (predictions.length === 0 && this.state.count <50){
-        this.state.count++;
-      }
-      else if (predictions.length === 0) {
-        this.state.count=0;
-        swal("Face Not Visible", "Action has been Recorded", "error");
-        this.props.FaceNotVisible();
-      }
+    // if face is not visible till 50 consecutive frames, student is
+    // not in front of the computer, throw an error
+    if (predictions.length === 0 && this.state.count < 50) {
+      this.state.count++;
+    }
+    else if (predictions.length === 0) {
+      this.state.count = 0;
+      swal("Face Not Visible 🚨", "Action has been Recorded ❗", "error");
+      this.props.FaceNotVisible();
+    }
 
-      // loop over all predictions and check if mobile phone, book, laptop or multiple
-      // people are there in the frame 
-      for (let i = 0; i < predictions.length; i++) {
+    // loop over all predictions and check if mobile phone, book, laptop or multiple
+    // people are there in the frame 
+    for (let i = 0; i < predictions.length; i++) {
 
-        if (predictions[i].class === "cell phone") {
-          this.props.MobilePhone();
-          swal("Mobile Detected 🚨", "Action has been Recorded ❗", "error");
-          
-        }
 
-        else if (predictions[i].class === "book" || predictions[i].class === "laptop") {
-          this.props.ProhibitedObject();
-          swal("Prohibited Object Detected 🚨", "Action has been Recorded  ❗", "error");
-          
-        }
-        
-        else if (predictions[i].class === "person") {
-          faces += 1;
-          this.state.count=0;
-        }
+
+      if (predictions[i].class === "book" || predictions[i].class === "laptop") {
+        this.props.ProhibitedObject();
+        swal("Prohibited Object Detected 🚨", "Action has been Recorded  ❗", "error");
 
       }
-      if(faces > 1){
-        this.props.MultipleFacesVisible();
-        swal(faces.toString()+" people detected", "Action has been recorded ❗", "error");
+      else if (predictions[i].class === "cell phone") {
+        this.props.MobilePhone();
+        swal("Mobile Detected 🚨", "Action has been Recorded ❗", "error");
+
       }
+
+      else if (predictions[i].class === "person") {
+        faces += 1;
+        this.state.count = 0;
+      }
+
+    }
+    if (faces > 1) {
+      this.props.MultipleFacesVisible();
+      swal(faces.toString() + " people detected", " 🚨 Action has been recorded ❗", "error");
+    }
 
   };
 
@@ -171,8 +174,8 @@ export default class Detection extends React.Component {
           playsInline
           muted
           ref={this.videoRef}
-          width= "800"
-          height= "400"
+          width="800"
+          height="400"
         />
         <canvas
           className="size"
@@ -184,3 +187,8 @@ export default class Detection extends React.Component {
     );
   }
 }
+
+
+/**********************************************************************/
+/****************** oBJECT dETECTIONS *****************************/
+/**********************************************************************/

@@ -10,11 +10,13 @@ const PageNotFound = () => {
 
   return (<div>
     <center>
-      <h3>
+      <h2>
         Page Not Found
-        </h3>
+        </h2>
       <small>
-        This action has been recorded
+        <br></br>
+        This action is saved .
+        <br></br>
         </small>
     </center>
   </div>

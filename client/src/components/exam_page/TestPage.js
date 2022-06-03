@@ -1,32 +1,36 @@
+/**********************************************************************/
+/********************** Test Page  ******************************/
+/********************************************************************/
+
 import React from 'react';
-import { useState, useEffect } from 'react';
 import Detection from './Object_Detection';
 import { Button } from '@mui/material';
-import swal from 'sweetalert';
-import "./ExamPage.css";
+import { useState, useEffect } from 'react';
 import { Redirect, useHistory } from "react-router-dom";
 import axios from 'axios';
+import swal from 'sweetalert';
+import "./ExamPage.css";
+
 
 export default function TestPage(props){
 
   const [student_name, setStudentName] = useState(props.location.state.student_name);
   const [student_email, setStudentEmail] = useState(props.location.state.student_email);
   const [exam_id, setExamId] = useState(props.location.state.exam_code);
-  const [form_link, setFormLink] = useState(props.location.state.exam_link);
-  const [minutes, setMinutes] = useState(parseInt(props.location.state.mins_left));
-  const [seconds, setSeconds] = useState(parseInt(props.location.state.secs_left));
   const [tab_change, setTabChange] = useState(0);
   const [key_press, setKeyPress] = useState(0);
   const [full_screen_exit, setFullScreenExit] = useState(0);
   const [mobile_phone_found, setMobilePhoneFound] = useState(false);
   const [prohibited_object_found, setProhibitedObjectFound] = useState(false);
   const [face_not_visible, setFaceNotVisible] = useState(false);
+  const [form_link, setFormLink] = useState(props.location.state.exam_link);
+  const [minutes, setMinutes] = useState(parseInt(props.location.state.mins_left));
+  const [seconds, setSeconds] = useState(parseInt(props.location.state.secs_left));
   const [multiple_faces_visible, setMultipleFacesVisible] = useState(false);
   const [checkedPrevLogs, setCheckedPrevLogs] = useState(false);
-  
   const history = useHistory();
 
-  /**
+  /*
    * The below 4 functions are helper functions to set state
    * Are passed to the ObjectDetection component to allow it
    * to change state of its parent (This component)
@@ -168,7 +172,7 @@ export default function TestPage(props){
         }
 
         if (minutes === 1 && seconds === 0) {
-          swal("Only 1 Minute Left, Please Submit or attendance wont be marked");
+          swal("Only 1 Minute Left, Please Submit  or attendance wont be marked");
         }
 
       if (seconds <= 0 && minutes <= 0) {
@@ -183,13 +187,13 @@ export default function TestPage(props){
 
   });
   
-  /**
+  /*
    * This function is called when the student presses exit exam button
    * since data is shared with the backend every second we just redirect to 
    * the dashboard after showing a confirmation message
    */
   function handleSubmit(){
-      swal("Thank You for taking the exam. Logs have been shared with your professor");
+      swal("Thank You for taking the exam 🙏 🙏. Logs 📁  have been shared with your professor 🗂️");
       history.push('/dashboard');
   }
   return (
@@ -202,18 +206,19 @@ export default function TestPage(props){
       </div>
 
       <br/>
-      <div className="name">
-        <h6 align="left">Name:  <span style={{ fontSize: '20px' }} > {student_name}</span></h6>
-        <h6 align="left">Exam ID:  <span style={{ fontSize: '20px' }} > {exam_id}</span></h6>
+      <div className="name" style={{border:"solid",borderRadius:"5px", backgroundColor:"#fdf5df"}}>
+        <h6 align="left" style={{color:"purple" , fontStyle:"solid"}}>👨‍🎓 Student Name ➜ <br></br><br></br> <span  style={{ fontSize: '20px' ,color:"red"  } } > {student_name}</span></h6>
+        
+        <h6 align="left"  style={{color:"purple"}} > 📇Paper Code ➜ <br></br><br></br><span style={{ fontSize: '20px' ,color:"red" }} > {exam_id}</span></h6>
       </div>
 
-      <div className="time_rem">
+      <div className="time_rem" style={{border:"solid purple",borderRadius:"5px" , backgroundColor:"#f7f7f7"}}>
         <p>Timer: {minutes === 0 && seconds === 1 ? null : <h1 align="center" style={{ fontSize: '69px' }}>  {minutes}:{seconds < 10 ? `0${seconds}` : seconds}</h1>
         } </p>
       </div>
 
       <div className="instructions">
-        <p align="center" style={{ fontSize: '18px' }}>To Save Your Attendance :<br/> Kindly Click <strong>Exit Exam</strong> after submitting the exam </p>
+        <p align="center" style={{ fontSize: '16px' }}>To save Your Exams Attendance :<br/> Please Click <strong>EXIT EXAM</strong> after submit the Exam Form </p>
         </div>
         <div className="exit">
         <center>
@@ -240,3 +245,8 @@ export default function TestPage(props){
 
 
 }
+
+
+/**********************************************************************/
+/********************** Test Page  ******************************/
+/********************************************************************/

@@ -1,11 +1,18 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
+/********************************************/
+/******************Log in page ****************/
+/********************************************/
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { loginUser } from "../../actions/authActions";
+import { loginUser } from "../../RegisterLog/authActions";
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import classnames from "classnames";
 
 
+
+
+// Login Class 
 class Login extends Component {
   constructor() {
     super();
@@ -15,6 +22,13 @@ class Login extends Component {
       errors: {}
     };
   }
+
+
+  /*
+  // If the user is already logged in, send him to dashboard
+  // set errors if present any error 
+   */
+
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
@@ -38,30 +52,39 @@ class Login extends Component {
 
   }
   /**
-   * Combined on change function for all components.
-   * The input event is used to get id which is the same as state name
-   * So the value of state is set to be event.target.value which is the 
-   * value inputted by user
    * @param {event} e
    * 
+   */
+  /*
+   1.  Combined on change function for all components.
+   2. The input event is used to get id which is the same as state name
+   3.So the value of state is set to be event.target.value which is the 
+   4. value inputted by user
    */
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
 
   /**
-   * This function is triggered when user presses log in button
-   * This sends email and password to loginUser function in authActions.js
    * @param {Event} e 
    */
+
+  /*
+   * This function is triggered when user presses log in button
+   * This sends email and password to loginUser function in authActions.js
+  */
   onSubmit = e => {
     e.preventDefault();
     const userData = {
+      // email 
       email: this.state.email,
+      //  password 
       password: this.state.password
     };
-    this.props.loginUser(userData); // since we handle the redirect within our component, 
+    // since we handle the redirect within our component, 
     //we don't need to pass in this.props.history as a parameter
+    this.props.loginUser(userData);
+
   };
 
 
@@ -114,6 +137,7 @@ class Login extends Component {
                     invalid: errors.password || errors.passwordincorrect
                   })}
                 />
+                {/* PASSWORD  */}
                 <label htmlFor="password"> 🔐 Enter your Password 🔐 </label>
                 <span className="red-text">
                   {errors.password}
@@ -123,61 +147,67 @@ class Login extends Component {
               <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
                   style={{
-                    width: "150px",
+                    // STRYLING OF BUTTON
+                    width: "170px",
                     borderRadius: "3px",
-                    letterSpacing: "1.5px",
+                    letterSpacing: "1.3px",
                     marginTop: "1rem"
                   }}
                   type="submit"
                   className="waves-effect waves-light btn-large pink darken-1"
                 >
-                  🆔 Log  🔐🆔
+                  🆔 Log iN 🔐🆔
                 </button>
               </div>
             </form>
             <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <hr></hr>
+            <br></br>
+            <br></br>
+            <br></br>
+            <hr></hr>
+            {/* AUtoWatchX-ai */}
             <h5>🤖🤖 <u>Powered By AI</u> try our <a href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " > automatic proctoring</a> <a class="waves-effect waves-light btn-large" href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " style={{
-                  width: "180px",
-                  borderRadius: "15px",
-                  letterSpacing: "1.5px",
-                  backgroundColor:"yellow",
-                  color:"black",
-                  fontFamily:"fantasy"
-                }}>Autowatchx.ai</a> 🤖🤖</h5>
+              width: "180px",
+              borderRadius: "15px",
+              letterSpacing: "1.5px",
+              backgroundColor: "yellow",
+              color: "black",
+              fontFamily: "fantasy"
+            }}>Autowatchx.ai</a> 🤖🤖</h5>
           </div>
 
           <br></br>
-          {/* <br></br>
-          <h5>🤖  <br></br>  <br></br> <u>Powered  <br></br> By  <br></br> A I  <br></br></u> try  <br></br>our  <br></br> <br></br> <a href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " > Automatic Proctoring  <br></br> <br></br></a> <a class="waves-effect waves-light btn-large" href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " style={{
-            width: "90%",
-            borderRadius: "15px",
-            letterSpacing: "1.5px",
-            backgroundColor: "yellow",
-            height: "63px",
-            padding: "2px 10px",
-            color: "black",
-            fontFamily: "fantasy"
-          }}>Autowatchx-ai</a>  <br></br> <br></br>🤖</h5> */}
 
         </div>
       </div>
     );
   }
 }
+
+// HANDLE LOGIN CASES
 Login.propTypes = {
+  // SET LOGINUSER
   loginUser: PropTypes.func.isRequired,
+  // SET AUTH
   auth: PropTypes.object.isRequired,
+  // SET eRROR 
   errors: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({
+  // SET AUTH
   auth: state.auth,
+  //  SET ERROR
   errors: state.errors
 });
 export default connect(
   mapStateToProps,
   { loginUser }
 )(Login);
+
+
+
+/********************************************/
+/******************Log in page **************/
+/********************************************/
+
+

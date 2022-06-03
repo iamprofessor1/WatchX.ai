@@ -6,7 +6,7 @@ import store from "./store";
 
 import jwt_decode from "jwt-decode";
 import setAuthToken from "./utils/setAuthToken";
-import { setCurrentUser, logoutUser } from "./actions/authActions";
+import { setCurrentUser, logoutUser } from "./RegisterLog/authActions";
 
 import Navbar from "./components/layout/Navbar";
 import Landing from "./components/layout/Landing";

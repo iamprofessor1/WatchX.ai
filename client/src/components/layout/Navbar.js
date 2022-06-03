@@ -1,9 +1,13 @@
+
+/*****************************************************************/
+/******************NAVBAR  ***************************************/
+/*************************************************************/
+
 import React from "react";
 import { Link } from "react-router-dom";
 
-/**
- * Creates the navbar that sticks to the top and is present on
- * all pages
+/*
+ 1 .Make  the navbar that paste always  to the top.
  */
 export default function Navbar() {
   return (
@@ -18,7 +22,6 @@ export default function Navbar() {
           }}
           className="col s5 brand-logo center black-text"
         >
-          {/* <i className="material-icons">computer</i> */}
           🧑‍💻 WatchX.ai 🧑‍💻
         </Link>
       </div>
@@ -26,3 +29,7 @@ export default function Navbar() {
   </div>
   );
 }
+
+/*****************************************************************/
+/******************NAVBAR  ***************************************/
+/*************************************************************/

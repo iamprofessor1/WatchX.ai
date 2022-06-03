@@ -1,8 +1,13 @@
+
+/******************************************************/
+/******************Registeration Page ****************/
+/*****************************************************/
+
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { registerUser } from "../../actions/authActions";
+import { registerUser } from "../../RegisterLog/authActions";
 import classnames from "classnames";
 class Register extends Component {
   constructor() {
@@ -33,34 +38,42 @@ class Register extends Component {
   }
 
   /**
-   * Combined on change function for all components.
-   * The input event is used to get id which is the same as state name
-   * So the value of state is set to be event.target.value which is the 
-   * value inputted by user
    * @param {event} e
    * 
    */
+
+  /*
+  * Combined on change function for all components.
+  * The input event is used to get id which is the same as state name
+  * So the value of state is set to be event.target.value which is the 
+  * value inputted by user
+  */
   onChange = e => {
     this.setState({ [e.target.id]: e.target.value });
   };
 
   /**
-   * Toggler Function for the Are you an instructor? Switch
+   * @param {event} e
+   * 
+   */
+  /*
+   * Toggler Function for the Are you an Professor ? Switch
    * The input event is used to get id which is the same as state name
    * So the value of state is set to be event.target.value which is the 
    * value inputted by user
-   * @param {event} e
-   * 
    */
   onToggle = e => {
     this.setState({ [e.target.id]: !this.state.userType });
   }
 
   /**
-   * This function is triggered when user presses register button
-   * This sends email and password to registerUser function in authActions.js
    * @param {Event} e 
    */
+
+  /*
+     * This function is triggered when user presses register button
+     * This sends email and password to registerUser function in authActions.js
+  */
   onSubmit = e => {
     e.preventDefault();
     const newUser = {
@@ -73,7 +86,7 @@ class Register extends Component {
     this.props.registerUser(newUser, this.props.history);
   };
 
-
+  // Render 
   render() {
     const { errors } = this.state;
     return (
@@ -104,6 +117,7 @@ class Register extends Component {
                     invalid: errors.name
                   })}
                 />
+                {/* taking input as Name  */}
                 <label htmlFor="name"> 👩‍👧‍👦 Enter your Name 👩‍👧‍👦</label>
                 <span className="red-text">{errors.name}</span>
               </div>
@@ -118,6 +132,7 @@ class Register extends Component {
                     invalid: errors.email
                   })}
                 />
+                {/* Taking input as Email */}
                 <label htmlFor="email">📧 Enter your Email 📧</label>
                 <span className="red-text">{errors.email}</span>
               </div>
@@ -132,6 +147,7 @@ class Register extends Component {
                     invalid: errors.password
                   })}
                 />
+                {/*  Taking input as Password  */}
                 <label htmlFor="password">🔑 Enter your Password 🔑</label>
                 <span className="red-text">{errors.password}</span>
               </div>
@@ -161,9 +177,9 @@ class Register extends Component {
               {<div className="col s12" style={{ paddingLeft: "11.250px" }}>
                 <button
                   style={{
-                    width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
+                    width: "150px",
                     marginTop: "1rem"
                   }}
                   type="submit"
@@ -172,40 +188,31 @@ class Register extends Component {
                   🔏 Sign up 🔏
                 </button>
               </div>}
-              
-            
+
+
             </form>
             <br></br>
-              <br></br>
-              <br></br>
-              <br></br>
-              <hr></hr>
+            <br></br>
+            <br></br>
+            <br></br>
+            <hr></hr>
+            {/* AutowatchX-ai */}
             <h5>🤖🤖 <u>Powered By AI</u> try our <a href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " > automatic proctoring</a> <a class="waves-effect waves-light btn-large" href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " style={{
-                  width: "180px",
-                  borderRadius: "15px",
-                  letterSpacing: "1.5px",
-                  backgroundColor:"yellow",
-                  color:"black",
-                  fontFamily:"fantasy"
-                }}>Autowatchx.ai</a> 🤖🤖</h5>
+              width: "180px",
+              borderRadius: "15px",
+              letterSpacing: "1.5px",
+              backgroundColor: "yellow",
+              color: "black",
+              fontFamily: "fantasy"
+            }}>Autowatchx.ai</a> 🤖🤖</h5>
           </div>
-          {/* <br></br>
-          <h5>🤖  <br></br>  <br></br> <u>Powered  <br></br> By  <br></br> A I  <br></br></u> try  <br></br>our  <br></br> <br></br> <a href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " > Automatic Proctoring  <br></br> <br></br></a> <a class="waves-effect waves-light btn-large" href="https://autowatchx-ai.herokuapp.com/" target="_blank" rel="New " style={{
-            width: "90%",
-            borderRadius: "15px",
-            letterSpacing: "1.5px",
-            backgroundColor: "yellow",
-            height: "63px",
-            padding: "2px 10px",
-            color: "black",
-            fontFamily: "fantasy"
-          }}>Autowatchx-ai</a>  <br></br> <br></br>🤖</h5> */}
-
         </div>
       </div>
     );
   }
 }
+// Handling Register Cases 
+
 Register.propTypes = {
   registerUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
@@ -219,3 +226,16 @@ export default connect(
   mapStateToProps,
   { registerUser }
 )(withRouter(Register));
+
+
+/******************************************************/
+/******************Registeration Page ****************/
+/*****************************************************/
+
+
+ /*
+   * Toggler Function for the Are you an Professor ? Switch
+   * The input event is used to get id which is the same as state name
+   * So the value of state is set to be event.target.value which is the 
+   * value inputted by user
+   */
