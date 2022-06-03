@@ -42,6 +42,7 @@
 * [ERdiagram](#ERdiagram)
 * [Use-Case-Diagram](#Use-Case-Diagram)
 * [WorkFlow](#WorkFlow)
+* [Schedule](#Schedule)
 * [Screenshots](#Screenshots)
 * [Need Help](#Need-Help)
 
@@ -264,6 +265,13 @@ cd WatchX.ai
 
 # WorkFlow
 ![WorkFlow](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/workflow.png?raw=true)
+<br>
+<br>
+
+# Schedule
+Due to my college exams, I could not figure out things clearly but I somehow manage to stay motivated and work on my project.
+![Schedule](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Agile.png?raw=true)
+
 <br>
 <br>
 
