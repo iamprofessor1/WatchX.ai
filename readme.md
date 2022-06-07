@@ -355,10 +355,13 @@ Due to my college exams, I could not figure out things clearly but I somehow man
 
 <br>
 
+
+
 ![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot20.png?raw=true)
 
 <br>
 
+![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot21.png?raw=true)
 
 
 <br>
