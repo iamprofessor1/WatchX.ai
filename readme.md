@@ -359,7 +359,7 @@ Due to my college exams, I could not figure out things clearly but I somehow man
 
 <br>
 
-![Screen Shot](https://github.com/iamprofessor1/WatchX.ai/blob/main/screenshot/WatchX/Screenshot21.png?raw=true)
+
 
 <br>
 <br>
@@ -402,12 +402,12 @@ Due to my college exams, I could not figure out things clearly but I somehow man
 
 <br>
 
+<br>
 
 
 
 
-
-## Need-Help
+# Need-Help
   
 [![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vikas-pandit/)
 [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vikaspandey1206@gmail.com)
